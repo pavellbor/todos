@@ -1,0 +1,270 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  --primary-color: #E30808;
+  --secondary-color: #e3e3e3;
+  --light-color: #f0f0f0;
+  --reverse-color: #ffffff;
+  --default-color: #000000;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 6.4rem 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  color: var(--default-color)
+}
+
+button {
+  padding: 0;
+  font: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+.button {
+  font-size: 1.6rem;
+  padding: 0.6rem 1rem;
+  border-radius: 1.6rem;
+}
+
+.button--primary {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.button--filled {
+  padding: 0.8rem 1rem;
+  color: var(--reverse-color);
+  background-color: var(--primary-color);
+}
+
+.button--primary:hover {
+  opacity: 0.8;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  width: 34rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+.logo {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--primary-color)
+}
+
+.burger {
+  font-size: 1.9rem;
+}
+
+.burger--active {
+  color: var(--primary-color)
+}
+
+.burger:hover {
+  color: var(--primary-color);
+}
+
+.app-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.text-input {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 1.6rem;
+  border: 0.1rem solid var(--light-color);
+  border-radius: 1.6rem;
+}
+
+.text-input--focus {
+  border: 0.2rem solid var(--primary-color);
+}
+
+.text-input .input {
+  flex-grow: 1;
+  padding: 0;
+  border: none;
+}
+
+.text-input .input:focus {
+  outline: none;
+}
+
+.text-input--search::after {
+  content: '\F52A';
+  font-family: bootstrap-icons !important;
+  font-size: 1.7rem;
+  color: var(--primary-color)
+}
+
+.toggle-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-sizing: border-box;
+  border: 0.1rem solid var(--light-color);
+  border-radius: 1.6rem;
+}
+
+.toggle-group .button {
+  font-size: 1.6rem;
+}
+
+.toggle-group .button:not(.button--primary):hover {
+  color: var(--primary-color);
+}
+
+.app-main {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.todo-list {
+  display: grid;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr 1.6rem;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.6rem 2rem;
+  border: 0.1rem solid var(--light-color);
+  border-radius: 1.6rem;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.todo-item:hover {
+  box-shadow: 0px 1px 20px rgb(240 240 240 / 80%);
+}
+
+.todo-item__text {
+  font-weight: 400;
+}
+
+.todo-item--high .todo-item__text {
+  font-weight: 500;
+}
+
+.todo-item--low .todo-item__text {
+  font-weight: 300;
+}
+
+.todo-item--done .todo-item__text {
+  text-decoration: line-through;
+}
+
+.todo-item__status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 2.4rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.todo-item__status .bi-check2 {
+  position: relative;
+  top: 0.1rem;
+  color: var(--primary-color)
+}
+
+.todo-item--done .todo-item__status {
+  opacity: 1;
+}
+
+.todo-item:hover .todo-item__status {
+  opacity: 1;
+}
+
+.todo-item--done .todo-item__status .bi-check2 {
+  display: block;
+}
+
+.todo-item__remove-button {
+  opacity: 0;
+  color: var(--secondary-color);
+  transition: opacity 0.2s;
+}
+
+.todo-item:hover .todo-item__remove-button {
+  opacity: 1;
+}
+
+.todo-item__remove-button:hover {
+  color: var(--primary-color);
+}
+
+.add-todo {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.add-todo__show-form-button {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 1.2rem 1.4rem;
+  color: var(--primary-color);
+  font-size: 1.9rem;
+  border: 0.1rem solid var(--light-color);
+  border-radius: 1.6rem;
+  transition: box-shadow 0.2s;
+}
+
+.add-todo__show-form-button:hover {
+  box-shadow: 0px 1px 20px rgb(240 240 240 / 80%);
+}
+
+.add-todo__form {
+  display: grid;
+  gap: 1.6rem;
+  padding: 1.4rem 1.6rem 2rem;
+  border: 0.1rem solid var(--light-color);
+  border-radius: 1.6rem;
+  box-shadow: 0px 1px 20px rgb(240 240 240 / 80%);
+}
+
+.add-todo__form .close-button {
+  justify-self: end;
+  font-size: 2rem;
+}
+
+.add-todo__form .close-button:hover {
+  color: var(--primary-color);
+}
+
+.app-footer {
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--secondary-color)
+}
